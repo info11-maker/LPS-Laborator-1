@@ -1,0 +1,55 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int min, max, decalaj, h, ora, h1=0, h2=0, h3=0;
+    int suma=0;
+    int o=0;
+    min=16;
+    max=20;
+
+    cout <<" introduceti numarul de ore de sosire sau de plecare " <<endl;
+    cin>>h;
+        for( int i=1; i<=h; i++) {
+        cout <<" introduceti ora " <<i<<" = ";
+        cin>>ora;
+
+        //valoarea minima si maxima
+            if( ora < min)
+                min=ora;
+            if( ora > max)
+                max=ora;
+
+        //calculam suma
+        suma+=ora;
+
+        //determinarea decalajului
+        decalaj = max-min;
+
+        //valori mai mici, mai mari sau egale
+            if(ora < 17) h1++;
+                else
+                    if ( ora > 17) h2++;
+                else h3++;
+
+        //nr. de autobuze, ce pleaca intr-un interval de timp anumit
+
+             if((ora > 17) && (ora < 20)) o++;
+
+        }
+
+    cout<<"ora minima este="<<min<<endl;
+    cout<<"ora maxima este="<<max<<endl;
+    cout<<"decalajul valorilor este="<<decalaj<<endl;
+    cout<<"media ora="<<(float)suma/h<<endl;
+    cout<<"ore mai maci ca 17 sunt "<<h1<<endl;
+    cout<<"ore mai mari ca 17 sunt "<<h2<<endl;
+    cout<<"ora egale cu 17 sunt "<<h3<<endl;
+    cout<<"intervalul de timp este "<<o<<endl;
+
+
+
+    return 0;
+}
