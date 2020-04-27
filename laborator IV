@@ -415,12 +415,12 @@ void matrixSort(int matrix[NMAX][NMAX], int &row, int &col){
 	do{
 		k ++;
 		change = 0;
-		for( int i  = 0; i < row - k; i++){
-			if(matrix[i][0] > matrix[i - 1][col + 1]){
-				for(int  j = 0; j < col; j ++){
+		for( int j  = 0; j < col - k; j++){
+			if(matrix[j][0] > matrix[j - 1][col + 1]){
+				for(int  i = 0; i < col; i ++){
 					temp = matrix[i][j];
-					matrix[i][j] = matrix[i+1][j];
-					matrix[i+1][j] = temp;
+					matrix[i][j] = matrix[i][j+1];
+					matrix[i][j+1] = temp;
 				}
 				change = 1;
 			}
@@ -428,7 +428,3 @@ void matrixSort(int matrix[NMAX][NMAX], int &row, int &col){
 	}while(change);
 
 }
-
-
-
-
